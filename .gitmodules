@@ -1,0 +1,6 @@
+[submodule "clang"]
+	path = clang
+	url = https://github.com/jhofstee/clang.git
+[submodule "tools/clang"]
+	path = tools/clang
+	url = https://github.com/jhofstee/clang.git
