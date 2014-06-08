@@ -90,10 +90,10 @@ AArch64RegisterInfo::getReservedRegs(const MachineFunction &MF) const {
     Reserved.set(AArch64::W29);
   }
 
-  if (STI->isTargetDarwin()) {
+  // if (STI->isTargetDarwin()) {
     Reserved.set(AArch64::X18); // Platform register
     Reserved.set(AArch64::W18);
-  }
+  // }
 
   if (hasBasePointer(MF)) {
     Reserved.set(AArch64::X19);
@@ -117,7 +117,7 @@ bool AArch64RegisterInfo::isReservedReg(const MachineFunction &MF,
     return true;
   case AArch64::X18:
   case AArch64::W18:
-    return STI->isTargetDarwin();
+    return true; //STI->isTargetDarwin();
   case AArch64::FP:
   case AArch64::W29:
     return TFI->hasFP(MF) || STI->isTargetDarwin();
